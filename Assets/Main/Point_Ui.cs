@@ -1,14 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Item : MonoBehaviour
+public class Point_Ui : MonoBehaviour
 {
-    Rigidbody2D item_rb;
-    [SerializeField]
-    public float hight = 5; //çÇÇ≥
-    [SerializeField]
-    public float wide = 10; //â°
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +14,6 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        this.GetComponent<Text>().text = "Score:" + PL.score.ToString();
     }
 }

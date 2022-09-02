@@ -12,25 +12,21 @@ public class PL : MonoBehaviour
     Rigidbody2D rb_pl;
     private bool isGround;　//地面判定
 
-    [SerializeField]
-    public static int score = 0;
-
     void Start()
     {
         //rbの取得
         rb_pl = GetComponent<Rigidbody2D>();
-        score = 0;
     }
 
     void Update()
     {
-        //右移動 右とD
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        //右移動
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(speed, 0, 0);
         }
-        //左移動　左とA
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        //左移動
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-speed, 0, 0);
         }

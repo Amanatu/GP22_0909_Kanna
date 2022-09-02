@@ -10,7 +10,7 @@ public class PL : MonoBehaviour
     public float jump = 10; //ジャンプ
     //重力
     Rigidbody2D rb_pl;
-    private bool isGround;　//地面判定
+    private bool is_ground;　//地面判定
 
     [SerializeField]
     public static int score = 0;
@@ -35,7 +35,7 @@ public class PL : MonoBehaviour
             transform.Translate(-speed, 0, 0);
         }
         //ジャンプは地面にいるときだけ
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        if (Input.GetKeyDown(KeyCode.Space) && is_ground)
         {
             rb_pl.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
         }
@@ -47,14 +47,14 @@ public class PL : MonoBehaviour
     {
         if (collision.tag == "ground") 
         {
-            isGround = true;
+            is_ground = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "ground")
         {
-            isGround = false;
+            is_ground = false;
         }
     }
 }

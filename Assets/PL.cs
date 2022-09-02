@@ -5,9 +5,9 @@ using UnityEngine;
 public class PL : MonoBehaviour
 {
     [SerializeField]
-    public float speed = 10000; //移動速度
+    public float speed = 10; //移動速度
     [SerializeField]
-    public float jump = 1000; //ジャンプ
+    public float jump = 10; //ジャンプ
     //重力
     Rigidbody2D rb_pl;
     private bool isGround;　//地面判定
